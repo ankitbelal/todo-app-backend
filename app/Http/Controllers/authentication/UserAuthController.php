@@ -37,4 +37,10 @@ class UserAuthController extends Controller
       
 
     }
+
+
+    public function logout()
+    {
+        return $this->userServices->logout();
+    }
 }

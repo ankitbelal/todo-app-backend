@@ -23,5 +23,11 @@ class UserServices
     {
         return $this->userRepository->register($data);
     }
+
+
+    public function logout()
+    {
+        return $this->userRepository->logout();
+    }
 }
 

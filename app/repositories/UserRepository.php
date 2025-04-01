@@ -37,4 +37,10 @@ class UserRepository implements UserRepositoryInterface
         
 
     }
+
+    public function logout()
+    {
+        auth()->user()->tokens()->delete();
+        return response()->json(['success' => true, 'message' => 'Logged out successfully']);
+    }
 }

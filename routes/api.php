@@ -12,12 +12,24 @@ use App\Http\Controllers\todos\TodosController;
 route::post('/signup',[UserAuthController::class,'register']);
 route::post('/login',[UserAuthController::class,'login']);
 
+Route::middleware('auth:sanctum')->post('/logout', [UserAuthController::class, 'logout']);
+
 
 route::group(['middleware' => 'auth:sanctum'], function(){
     route::get('all-todos',[TodosController::class,'index']);
 route::post('create-todos',[TodosController::class,'store']);
 route::put('update-todos/{id}',[TodosController::class,'update']);
 route::delete('delete-todos/{id}',[TodosController::class,'destroy']);
+
 });
+
+
+route::get('/login',[UserAuthController::class,'login'])->name('login');
+
+
+
+
+
+
 
 
