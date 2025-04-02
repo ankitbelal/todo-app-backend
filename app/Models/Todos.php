@@ -9,7 +9,6 @@ class Todos extends Model
 
     protected $fillable = [
         'title',
-        'description',
         'user_id',
         'completed',
     ];

@@ -18,8 +18,8 @@ Route::middleware('auth:sanctum')->post('/logout', [UserAuthController::class, '
 route::group(['middleware' => 'auth:sanctum'], function(){
     route::get('all-todos',[TodosController::class,'index']);
 route::post('create-todos',[TodosController::class,'store']);
-route::put('update-todos/{id}',[TodosController::class,'update']);
-route::delete('delete-todos/{id}',[TodosController::class,'destroy']);
+route::put('update-todos',[TodosController::class,'update']);
+route::delete('delete-todos',[TodosController::class,'destroy']);
 
 });
 
