@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Todos;
 use App\services\TodoServices;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class TodosController extends Controller
@@ -17,8 +17,8 @@ class TodosController extends Controller
     public function index()
     {
         return $this->todoServices->getList(Auth::id());
-       
-        
+
+
     }
 
 
@@ -27,7 +27,7 @@ class TodosController extends Controller
      */
     public function store(Request $request)
 
-    { 
+    {
         $request['user_id'] = Auth::id();
 
         return $this->todoServices->create($request->all());
@@ -46,11 +46,15 @@ class TodosController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy(Request $request)
+    {
+        $id = $request->id;
+        $request['user_id'] = Auth::id();
     {
        return $this -> todoServices -> delete($id);
     }
 
-    
-  
+
+
+}
 }
