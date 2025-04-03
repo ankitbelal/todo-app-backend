@@ -2,7 +2,7 @@
 
 namespace App\repositories;
 
-interface TodoRepositoryInterface
+interface TodosRepositoryInterface
 {
     public function getList($id);
 

@@ -4,13 +4,13 @@ namespace App\Http\Controllers\todos;
 use App\Http\Controllers\Controller;
 
 use App\Models\Todos;
-use App\services\TodoServices;
+use App\services\TodosServices;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class TodosController extends Controller
 {
-    public function __construct(public TodoServices $todoServices)
+    public function __construct(public TodosServices $todoServices)
     {
 
     }

@@ -2,14 +2,14 @@
 
 namespace App\services;
 
-use App\repositories\TodoRepositoryInterface;
+use App\repositories\TodosRepositoryInterface;
 
-class TodoServices
+class TodosServices
 {
     /**
      * Create a new class instance.
      */
-    public function __construct(public TodoRepositoryInterface $todoRepository)
+    public function __construct(public TodosRepositoryInterface $todoRepository)
     {
         
     }

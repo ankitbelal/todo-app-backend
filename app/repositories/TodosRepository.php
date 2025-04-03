@@ -4,7 +4,7 @@ namespace App\repositories;
 use App\Models\Todos;
 use App\Models\User;
 
-class TodoRepository implements TodoRepositoryInterface
+class TodosRepository implements TodosRepositoryInterface
 {
     /**
      * Create a new class instance.
