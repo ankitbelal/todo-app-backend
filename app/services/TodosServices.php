@@ -7,7 +7,7 @@ use App\repositories\TodosRepositoryInterface;
 class TodosServices
 {
     /**
-     * Create a new class instance.
+     * Create a new class instance. 
      */
     public function __construct(public TodosRepositoryInterface $todoRepository)
     {
