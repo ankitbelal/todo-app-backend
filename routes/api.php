@@ -12,7 +12,6 @@ use App\Http\Controllers\todos\TodosController;
 route::post('/signup',[UserAuthController::class,'register']);
 route::post('/login',[UserAuthController::class,'login']);
 
-Route::middleware('auth:sanctum')->post('/logout', [UserAuthController::class, 'logout']);
 
 
 route::group(['middleware' => 'auth:sanctum'], function(){
@@ -20,6 +19,8 @@ route::group(['middleware' => 'auth:sanctum'], function(){
 route::post('create-todos',[TodosController::class,'store']);
 route::put('update-todos',[TodosController::class,'update']);
 route::delete('delete-todos',[TodosController::class,'destroy']);
+
+Route::post('/logout', [UserAuthController::class, 'logout']);
 
 });
 
